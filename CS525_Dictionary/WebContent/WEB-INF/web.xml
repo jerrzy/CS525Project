@@ -9,6 +9,10 @@
       <servlet-name>SimilarWordsServlet</servlet-name>
       <servlet-class>com.dictionary.controller.SimilarWordsServlet</servlet-class>
   </servlet>
+  <servlet>
+      <servlet-name>LoginServlet</servlet-name>
+      <servlet-class>com.dictionary.controller.LoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
       <servlet-name>ControllerServlet</servlet-name>
       <url-pattern>/lookup.do</url-pattern>
@@ -17,6 +21,10 @@
       <servlet-name>SimilarWordsServlet</servlet-name>
       <url-pattern>/similar.do</url-pattern>
   </servlet-mapping>
+ <servlet-mapping>  
+    <servlet-name>LoginServlet</servlet-name>  
+    <url-pattern>/login.do</url-pattern>  
+  </servlet-mapping>  
   <session-config>
       <session-timeout>
           30
@@ -29,5 +37,6 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
+     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
