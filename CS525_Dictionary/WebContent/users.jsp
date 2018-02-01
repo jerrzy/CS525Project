@@ -9,20 +9,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="jquery.js" type="text/javascript"></script>
-<script src="index.js" type="text/javascript"></script>
-<script src="user.js" type="text/javascript"></script>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/user.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="style/index.css">
 <link rel="stylesheet" type="text/css" href="style/users.css">
 <title>Dictionary</title>
 </head>
 <body>
 	<div id="header">
-		Word Lookup
+		<div id="headerTitle">News hub</div>
 		<div id="header_right">
 			<a href="register.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign up</a>
 		 	<a href="login.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign in</a>
 		 	<a href="users.jsp"><img src="icons/add-user.png" width="16px" height="16px">View users</a>
+		 	<a href="index.jsp"><img src="icons/add-user.png" width="16px" height="16px">Home</a>
 		</div>
 	</div>
 	<div id="content">
