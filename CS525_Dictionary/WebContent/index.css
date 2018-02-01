@@ -3,6 +3,7 @@ body {
 	width: 100%;
 	marign-right: auto;
 	margin-left: auto;
+	overflow: scroll;
 }
 
 #title {
@@ -10,7 +11,7 @@ body {
 	text-align: center;
 }
 #header {
-	position: fixed;
+	position: absolute;
 	float:left;
 	top: 0;
 	width: 100%;
@@ -24,45 +25,53 @@ body {
 	height: 60px; /* Height of the footer */
 	background: #8080ff;
 }
+#headerTitle{
+	margin:10px;
+	font-size:30px;
+}
 #content {
-	position:fixed;
+	position:absolute;
 	top:60px;
 	margin: 5px;
 	width: 100%;
 	padding:5px;
 	align-content;center;
-	border-style: solid;
-	border-color: red;
 }
 #article{
 	position:relative;
-	width:70%;
+	width:75%;
 	float:left;
-	border-style: solid;
-	border-color: green;
 }
 #articletitle{
 	background-color:gray;	
 }
 #tool{
 	position:relative;
-	width:25%;
+	width:20%;
 	float:left;
-	border-style: solid;
-	border-color: blue;
+	margin:5px;
+}
+td{
+	height:30px;
 }
 .articleTitle{
+	margin:10px;
+	font-size:24px;
 	color:blue;
 }
 .articleContent{
-	color:gray;
+	margin:10px;
+	font-size:22px;
 }
-.articleUserName{
-	color:red;
+.articleAuthor{
+	margin:10px;
+	color:gray;
 	font-size:16px;
 }
 .articleDate{
+	margin:10px;
 	font-size:16px;
+	color:gray;
 }
 #search {
 	width: 100%;
@@ -75,7 +84,7 @@ body {
 	width:15%;
 }
 .entry {
-	font-size: 10px;
+	font-size: 16px;
 	float: left;
 	width: 100%;
 	margin: 5px 5px 5px 5px;
@@ -91,6 +100,7 @@ body {
 }
 #header_right{
 	position: absolute;
+	margin:5px;
 	right: 5px;
 	top:10px
 }
@@ -110,34 +120,4 @@ body {
 	font-size: 16px;
 	padding: 4px 7px 4px 7px;
 	text-decoration: none;
-}
-.userdetails h4 {
-	width:60%;
-	text-decoration:underline;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:1px;
-	margin-bottom:1px;
-}
-
-.userp {
-    display: block;
-    float: left;
-    line-height: 0.6;
-    width:30%;
-    margin-left: 65px;
-    margin-top:1px;
-	margin-bottom:1px;
-    padding: 10px;
-    align-content:center;
-     border-radius: 4px;
-    
-}
-
-.userdetails {
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:1px;
-	margin-bottom:1px;
-	width:70%;
 }

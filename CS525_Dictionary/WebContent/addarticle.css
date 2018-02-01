@@ -1,0 +1,12 @@
+#inputform * {
+	margin:5px 10px 5px 10px;
+	width:90%;	
+}
+#submitButton{
+	margin:5px 10px 5px 10px;
+}
+#header_right{
+	position: absolute;
+	right: 5px;
+	top:10px
+}

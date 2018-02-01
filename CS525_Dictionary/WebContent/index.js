@@ -8,27 +8,89 @@ $(document).ready(function () {
     var lookupUrl = "lookup.do";
     var similarUrl = "similar.do";
     var articleUrl = "article.do";
+    var userUrl = "user.do";
     
     initPageData();
+    attachSerachAction();
     
     function initPageData(){
     	var userId = $("#inputParams").attr("userId");
     	var articleId = $("#inputParams").attr("articleId");
     	if(userId === "" && articleId === ""){
-    		listArticles();
+    		listAllArticles();
     	} else {
-    		loadArticle(userId, articleId);
+    		loadArticleById(userId, articleId);
     	}
+    }
+    
+    /*
+     * get user by userId
+     */
+    function getUserById(userId){
+    	var userObj;
+    	$.ajax({
+    		url:userUrl,
+    		type:'get',
+    		data:{
+    			userId:userId
+    		},
+    		async: false,
+    		dataType:'json'
+    	}).done(function(msg){
+    		console.log(msg);
+    		userObj = msg;
+    	});
+    	return userObj;
     }
     
     /*
      * list all articles
      */
-    function listArticles(){
+    function listAllArticles(){
     	
     	$.ajax({
             url: articleUrl,
             type: 'get',
+            dataType: 'json'
+        }).done(function (msg) {
+            console.log(msg);
+            appendArticles(msg);
+        });
+    }
+    
+    function lookupWord(word) {
+    	$.ajax({
+            url: lookupUrl,
+            type: 'get',
+            data: {word: word},
+            dataType: "json"
+        }).done(function (msg) {
+//            console.log(msg);
+            appendEntries(msg);
+        });
+
+        $.ajax({
+            url: similarUrl,
+            type: 'get',
+            data: {
+                input: word
+            },
+            dataType: "json"
+        }).done(function (msg) {
+            console.log(msg);
+            appendSimilars(msg);
+        });
+    }
+    /*
+     * search articles by key word
+     */
+    function searchArticlesByKeyWord(keyWord) {
+    	$.ajax({
+            url: articleUrl,
+            type: 'get',
+            data: {
+            	keyWord:keyWord
+            	},
             dataType: "json"
         }).done(function (msg) {
             console.log(msg);
@@ -37,9 +99,25 @@ $(document).ready(function () {
     }
     
     /*
+     * search articles by user ID
+     */
+    function searchArticlesByUserName(userId){
+    	$.ajax({
+            url: articleUrl,
+            type: 'get',
+            data: {
+            	userId:userId
+            	},
+            dataType: "json"
+        }).done(function (msg) {
+            console.log(msg);
+            appendArticles(msg);
+        });
+    }
+    /*
      * load specific article
      */
-    function loadArticle(userId, articleId){
+    function loadArticleById(userId, articleId){
     	$.ajax({
             url: articleUrl,
             type: 'get',
@@ -55,10 +133,14 @@ $(document).ready(function () {
     }
     
     function showArticleDetail(msg){
+    	
+    	var user = getUserById(msg['userId']);
+    	
     	$("#articlecontent").empty();
-    	var html = "<p>" + msg['title'] + msg['date'] + "</p>";
-    	html += "<p>"+ msg['content'] + "</p>"
-		html += "<p> by user: " + msg['userId'] + "</p>";    	
+    	var html = "<p class='articleTitle'>" + msg['title'] + "</p>";
+    	html += "<p class='articleDate'>" + msg['date'] + "</p>";
+    	html += "<p class='articleContent'>"+ msg['content'] + "</p>"
+		html += "<p class='articleAuthor'> by: " + user['userName'] + "</p>";    	
     	$("#articlecontent").append(html);
     }
     
@@ -70,12 +152,13 @@ $(document).ready(function () {
     	//html += "<tr><th>Index</th><th>Title</th><th>Content</th><th>Author</th></tr>";
     	$.each(msg, function(index, value){
     		
+    		var user = getUserById(value['userId']);
     		var detailLink = "index.jsp?articleId=" + value['id'];
     		html += "<tr>";   
     		html += "<td>" + (index + 1) + "</td>";
     		html += "<td class='articleTitle'>" + wrapValueWithLink(value['title'], detailLink) + "</td>";
     		//html += "<td class='articleContent'>" + wrapValueWithLink(value['content'], detailLink) + "</td>"; 
-    		html += "<td class='articleUserName'> by user: " + value['userId'] + "</td>";
+    		html += "<td class='articleAuthor'>" + user['userName'] + "</td>";
     		html += "<td class='articleDate'>" + value['date'] + "</td>";
     		html += "</tr>";
     	});
@@ -108,28 +191,18 @@ $(document).ready(function () {
         $("#searchsimilar").append(html);
     }
     
-    $("#searchButton").click(function () {
-        var inputWord = $("#inputWord").val();
-        $.ajax({
-            url: lookupUrl,
-            type: 'get',
-            data: {word: inputWord},
-            dataType: "json"
-        }).done(function (msg) {
-//            console.log(msg);
-            appendEntries(msg);
+    function attachSerachAction(){
+    	$("#searchButton").click(function () {
+            var inputWord = $("#inputWord").val();
+            var searchOption = $("input:checked").val();
+            console.log("serch option:"+searchOption);
+            if(searchOption === "word"){
+            	lookupWord(inputWord);
+            } else if(searchOption === "article"){
+            	searchArticlesByKeyWord(inputWord);
+            } else if(searchOption === "user"){
+            	searchArticlesByUserName(inputWord);
+            }
         });
-
-        $.ajax({
-            url: similarUrl,
-            type: 'get',
-            data: {
-                input: inputWord
-            },
-            dataType: "json"
-        }).done(function (msg) {
-            console.log(msg);
-            appendSimilars(msg);
-        });
-    });
+    }
 });

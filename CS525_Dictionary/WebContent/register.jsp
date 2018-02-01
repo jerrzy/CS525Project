@@ -10,8 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="jquery.js" type="text/javascript"></script>
-
-<link rel="stylesheet" type="text/css" href="dictionary.css">
+<link rel="stylesheet" type="text/css" href="index.css">
 <title>Dictionary</title>
 </head>
 <body>

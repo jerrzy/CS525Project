@@ -1,17 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%-- 
+    Document   : index
+    Created on : Dec 19, 2017, 2:47:06 PM
+    Author     : feifei
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="jquery.js" type="text/javascript"></script>
+<script src="addarticle.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="addarticle.css">
+<title>Dictionary</title>
 </head>
 <body>
-<form action="article.do" method="post">
-User ID:<input type="text" name="userId" id="userId"><br>
-Title:<input type="text" name="title" id="title"><br>
-Content:<input type="text" name="content" id="content"><br>
-<input type="submit">
-</form>
+	<div id="header">
+		<div id="headerTitle">News hub</div>
+		<div id="header_right">
+			<a href="register.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign up</a>
+		 	<a href="login.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign in</a>
+		 	<a href="users.jsp"><img src="icons/add-user.png" width="16px" height="16px">View users</a>
+		 	<a href="addarticle.jsp"><img src="icons/add-user.png" width="16px" height="16px">+</a>
+		 	<a href="index.jsp"><img src="icons/add-user.png" width="16px" height="16px">Home</a>
+		</div>
+	</div>
+	<div id="content">
+		<div id="inputform">
+			<div>User ID:</div>
+			<input id="articleUserId" type="text" name="userId">
+			
+			<div>Title:</div>
+			<input id="articleTitle" type="text" name="title">
+			
+			<div>Content:</div>
+			<textarea id="articleContent" rows="20" cols="100" name="content"></textarea>
+		</div>
+		<div><button id="submitButton" type="button">Submit</button></div>
+	</div>
+	<div id="footer">Copyright @2018</div>
 </body>
 </html>
