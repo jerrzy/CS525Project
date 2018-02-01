@@ -8,10 +8,7 @@ package com.dictionary.service;
 import com.dictionary.dao.WordDAO;
 import com.dictionary.domain.Entry;
 import com.google.gson.Gson;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,11 +20,6 @@ public class LookupService {
 
     public LookupService() {
         wordDAO = new WordDAO();
-        try {
-            wordDAO.connect();
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(LookupService.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     public String lookup(String input) {

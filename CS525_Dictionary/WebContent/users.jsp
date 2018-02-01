@@ -25,21 +25,11 @@
 		</div>
 	</div>
 	<div id="content">
-		<p id="inputParams" style="display: none" userId="${param.userId}" articleId="${param.articleId}"></p>
-		<div id="article">
-			<div id="articletitle">News Hub</div>
-			<div id="articlecontent">article list</div>
-		</div>
-		<div id="tool">
-			<div id="search">
-				<input id="inputWord" type="text" />
-				<input id="searchButton" type="button" value="Go"><br>
-				<input id="searchWord" checked type="radio" value="word" name="searchOption">Word</input>
-				<input id="searchArticle" type="radio" value="article" name="searchOption">Article</input>
-				<input id="searchArticleByUser" type="radio" value="user" name="searchOption">Author</input>
-			</div>
-			<div id="searchcontent"></div>
-			<div id="searchsimilar"></div>
+		<p id="inputParams" style="display: none" userId="${param.userId}"></p>
+		<div id="usercontent">
+			<div id="userUserName">Username</div>
+			<div id="userFirstName">First Name</div>
+			<div id="userLastName">Last Name</div>
 		</div>
 	</div>
 	<div id="footer">Copyright @2018</div>
