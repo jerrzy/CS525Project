@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="jquery.js" type="text/javascript"></script>
 <script src="article.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="article.css">
+<link rel="stylesheet" type="text/css" href="style/article.css">
 <title>Dictionary</title>
 </head>
 <body>

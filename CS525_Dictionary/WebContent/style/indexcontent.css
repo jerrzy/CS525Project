@@ -1,55 +1,14 @@
-body {
-	background-color: #ffffff;
-	width: 100%;
-	marign-right: auto;
-	margin-left: auto;
-	overflow: scroll;
-}
-
-#title {
-	margin: 2px;
-	text-align: center;
-}
-#header {
-	position: absolute;
-	float:left;
-	top: 0;
-	width: 100%;
-	height: 60px; /* Height of the footer */
-	background: #8080ff;
-}
-#footer {
-	position:fixed;
-	bottom: 0;
-	width: 100%;
-	height: 60px; /* Height of the footer */
-	background: #8080ff;
-}
-#headerTitle{
-	margin:10px;
-	font-size:30px;
-}
-#content {
-	position:absolute;
-	top:60px;
-	margin: 5px;
-	width: 100%;
-	padding:5px;
-	align-content;center;
-}
 #article{
 	position:relative;
 	width:75%;
 	float:left;
 }
 #articletitle{
-	background-color:gray;	
+	background-color:lightgray;	
 }
 #tool{
-	position:relative;
-	width:20%;
+	width:23%;
 	float:left;
-	margin:5px;
 }
 td{
 	height:30px;
@@ -78,7 +37,7 @@ td{
 }
 #inputWord {
 	width: 70%;
-	margin: 5px 0px 5px 5px;
+	margin: 0px 0px 5px 5px;
 }
 #searchButton {
 	width:15%;
@@ -97,12 +56,6 @@ td{
 
 .definition {
 	margin: 0;
-}
-#header_right{
-	position: absolute;
-	margin:5px;
-	right: 5px;
-	top:10px
 }
 .button{
 	background: #306c94;

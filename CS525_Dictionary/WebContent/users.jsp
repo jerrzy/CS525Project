@@ -12,8 +12,8 @@
 <script src="jquery.js" type="text/javascript"></script>
 <script src="index.js" type="text/javascript"></script>
 <script src="user.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="index.css">
-<link rel="stylesheet" type="text/css" href="users.css">
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link rel="stylesheet" type="text/css" href="style/users.css">
 <title>Dictionary</title>
 </head>
 <body>

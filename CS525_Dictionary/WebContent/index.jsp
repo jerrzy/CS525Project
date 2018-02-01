@@ -11,8 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="jquery.js" type="text/javascript"></script>
 <script src="index.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="index.css">
-<title>Dictionary</title>
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link rel="stylesheet" type="text/css" href="style/indexcontent.css">
+<title>News Press</title>
 </head>
 <body>
 	<div id="header">
