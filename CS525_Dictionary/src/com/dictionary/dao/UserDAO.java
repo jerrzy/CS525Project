@@ -30,31 +30,31 @@ public class UserDAO {
 						user.getZipcode() });
 	}
 
-	public List<User> queryUsers(String userName) {
+	public User queryUsers(String userName) {
 
 		List<Object[]> queryResult = DBConnection.getInstance().query(fuzzySQLTemplate,
-				new Object[] { "%" + userName + "%" });
-		List<User> result = new ArrayList<User>();
-		for (Object[] objects : queryResult) {
-			User user = new User();
-			try {
-				user.setId(Integer.parseInt(objects[0].toString()));
-				user.setUserName(objects[1].toString());
-				user.setFirstName(objects[2].toString());
+				new Object[] {userName});
 
-				user.setLastName(objects[3].toString());
-				user.setEmail(objects[4].toString());
-				user.setPassword(objects[5].toString());
-				user.setRole(objects[6].toString());
-				user.setState(objects[7].toString());
-				user.setCity(objects[8].toString());
-				user.setStreet(objects[9].toString());
-				user.setZipcode(objects[10].toString());
-			} catch (Exception e) {
-			}
-			result.add(user);
+		try {
+			Object[] obj = queryResult.get(0);
+			User user = new User();
+			user.setId(Integer.parseInt(obj[0].toString()));
+			user.setUserName(obj[1].toString());
+			user.setFirstName(obj[2].toString());
+
+			user.setLastName(obj[3].toString());
+			user.setEmail(obj[4].toString());
+			user.setPassword(obj[5].toString());
+			user.setRole(obj[6].toString());
+			user.setState(obj[7].toString());
+			user.setCity(obj[8].toString());
+			user.setStreet(obj[9].toString());
+			user.setZipcode(obj[10].toString());
+			return user;
+		} catch (Exception e) {
 		}
-		return result;
+
+		return null;
 	}
 
 	public List<User> queryAllUsers() {

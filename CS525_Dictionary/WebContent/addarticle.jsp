@@ -13,7 +13,7 @@
 <script src="js/addarticle.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="style/index.css">
 <link rel="stylesheet" type="text/css" href="style/addarticle.css">
-<title>Dictionary</title>
+<title>News Press</title>
 </head>
 <body>
 	<div id="header">
@@ -22,7 +22,6 @@
 			<a href="register.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign up</a>
 		 	<a href="login.jsp"><img src="icons/add-user.png" width="16px" height="16px">Sign in</a>
 		 	<a href="users.jsp"><img src="icons/add-user.png" width="16px" height="16px">View users</a>
-		 	<a href="addarticle.jsp"><img src="icons/add-user.png" width="16px" height="16px">+</a>
 		 	<a href="index.jsp"><img src="icons/add-user.png" width="16px" height="16px">Home</a>
 		</div>
 	</div>

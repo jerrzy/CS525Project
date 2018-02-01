@@ -11,6 +11,18 @@ public class Configuration {
 
 	public static final String DataPattern = "MMMM d, yyyy HH:mm:ss";
 
+	public static String getKeyCurrentUser() {
+		return "currentUser";
+	}
+
+	public static String getKeyUserName() {
+		return "username";
+	}
+
+	public static String getKeyPassword() {
+		return "userpass";
+	}
+
 	public static Date String2Date(String dateS) {
 
 		DateFormat formatter = new SimpleDateFormat(DataPattern);

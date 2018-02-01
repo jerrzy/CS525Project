@@ -1,0 +1,22 @@
+.contentcenter {
+	position:relative;
+	margin: auto;
+    width: 40%;    
+}
+
+.titlecenter {
+	margin-top:5px;
+	margin-bottom:5px;
+	text-align:center;
+}
+
+.titleright {
+	margin-top:5px;
+	margin-bottom:5px;
+	text-align:right;
+}
+
+.buttonsize {
+	width: 80px;
+	height: 25px;
+}

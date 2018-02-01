@@ -54,7 +54,7 @@ public class UserService {
 	}
 
 	public String fuzzySelectUserByUserName(String userName) {
-		List<User> users = userDAO.queryUsers(userName);
+		User users = userDAO.queryUsers(userName);
 		Gson gson = new Gson();
 		String json = gson.toJson(users);
 		return json;
